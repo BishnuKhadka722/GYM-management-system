@@ -13,8 +13,12 @@ header('location:../index.php');
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="stylesheet" href="../css/bootstrap.min.css" />
+<link rel="stylesheet" href="../css/fullcalendar.css" />
 <link rel="stylesheet" href="../css/matrix-style.css" />
 <link rel="stylesheet" href="../css/matrix-media.css" />
+<link href="../font-awesome/css/font-awesome.css" rel="stylesheet" />
+<link rel="stylesheet" href="../css/jquery.gritter.css" />
+
 </head>
 <body>
 
@@ -22,26 +26,35 @@ header('location:../index.php');
 <div id="header">
   <h1><a href="index.php">Perfect Gym System</a></h1>
 </div>
- 
+<!--close-Header-part--> 
 
 
-
+<!--top-Header-menu-->
 <?php include '../includes/topheader.php'?>
+<!--close-top-Header-menu-->
 
+<!--start-top-serch-->
+<!-- <div id="search">
+  <input type="hidden" placeholder="Search here..."/>
+  <button type="submit" class="tip-bottom" title="Search"><i class="icon-search icon-white"></i></button>
+</div> -->
+<!--close-top-serch-->
+<!--sidebar-menu-->
 <?php $page="reminder"; include '../includes/sidebar.php'?>
+<!--sidebar-menu-->
 
-
+<!--main-container-part-->
 <div id="content">
-
+<!--breadcrumbs-->
   <div id="content-header">
     <div id="breadcrumb"> <a href="index.php" title="You're right here" class="tip-bottom"><i class="icon-home"></i> Home</a></div>
   </div>
+<!--End-breadcrumbs-->
 
-
-
+<!--Action boxes-->
   <div class="container-fluid">
     
-  
+<!--End-Action boxes-->    
 
     <div class="row-fluid">
 	  
@@ -55,7 +68,7 @@ header('location:../index.php');
       include "../../dbcon.php";
       $qry="SELECT reminder FROM members WHERE user_id='".$_SESSION['user_id']."'";
       $cnt = 1;
-        $result=mysqli_query($con,$qry);
+        $result=mysqli_query($conn,$qry);
 
         
          
